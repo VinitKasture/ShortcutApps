@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #8EC5FC;
+    overflow: hidden;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+.container {
+    margin-top: 100px;
+}
+
+#dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 55px;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.container i {
+    margin: 0 0 0 8px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.container .dropdownList {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scaleY(0);
+    transform-origin: top;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.container .dropdownList a {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 285px;
+    height: 40px;
+    margin: 7px;
+    padding: 10px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.dropdownList a:hover {
+    background-color: #ccc;
+}
+
+.container .dropdownList.active {
+    margin-top: 5px;
+    transform: scaleY(1);
+}
+
+section {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 125vw;
+    z-index: -1;
+}
+
+section .box {
+    height: 300px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.1;
+    animation: rotateCube 400s ease;
+}
+
+section .box.white {
+    transform: rotate(20deg);
+    animation-delay: 0.5s;
+}
+
+section .box.black {
+    transform: rotate(40deg);
+    background-color: #000;
+    opacity: 0.1;
+    animation-delay: 1s;
+}
+
+@keyframes rotateCube {
+    0% {}
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
